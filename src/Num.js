@@ -1,12 +1,12 @@
 function random_a_number(){
-    var nums = [];
+    var numbers = [];
     var thousand = parseInt(Math.random()*9 +1);
-    nums.push(thousand);
-    while (nums.length<4){
-        var num = parseInt(Math.random()*10);
-        if(!_.contains(nums,num)){
-            nums.push(num);
+    numbers.push(thousand);
+    while (numbers.length<4){
+        var number = parseInt(Math.random()*10);
+        if(!_.contains(numbers,number)){
+            numbers.push(number);
         }
     }
-    return nums[0]*1000+nums[1]*100+nums[2]*10+nums[3];
+    return numbers[0]*1000+numbers[1]*100+numbers[2]*10+numbers[3];
 }
