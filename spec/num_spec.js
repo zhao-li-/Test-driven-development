@@ -1,16 +1,16 @@
 describe("Num", function () {
 
-    var num = random_a_number();
+    var number = random_a_number();
 
     it("should be one number ", function () {
-        expect(num).not.toBeNaN();
+        expect(number).not.toBeNaN();
     });
     it("should be four digit numbers ", function () {
-        expect(num.toString().length).toEqual(4);
+        expect(number.toString().length).toEqual(4);
     });
 
     it("should not repeated", function () {
-        var not_repeated = should_not_repeated(num);
+        var not_repeated = should_not_repeated(number);
         expect(not_repeated).toBeTruthy();
     });
     it("should be one random number ", function () {
