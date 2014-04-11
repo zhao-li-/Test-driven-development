@@ -1,15 +1,20 @@
 describe("Num", function () {
 
+    var num = random_a_number();
 
-    beforeEach(function () {
-
+    it("should be one number ", function () {
+        expect(num).not.toBeNaN();
+    });
+    it("should be four digit numbers ", function () {
+        expect(num.toString().length).toEqual(4);
     });
 
-    it("should be four random no-repeat digits ", function () {
-        var num = Num();
-        console.log(num);
-        var judge = num.judge();
-        expect(judge).toBeTruthy();
+    it("should not repeated", function () {
+        var not_repeated = should_not_repeated(num);
+        expect(not_repeated).toBeTruthy();
     });
-
+    it("should be one random number ", function () {
+        var is_random_number = should_one_random_num();
+        expect(is_random_number).toBeTruthy();
+    });
 });
