@@ -25,8 +25,18 @@ describe("compare_number", function () {
         expect(back_string).toEqual("0A0B");
     });
 
-    it("should be 1A0B when guess 1156 for 1243 ", function () {
-        var back_string = compare("1156", "1243")
-        expect(back_string).toEqual("1A0B");
+    it("should be 1A0B when guess 1236 for 1243 ", function () {
+        var back_string = compare("1236", "1243")
+        expect(back_string).toEqual("2A1B");
+    });
+
+    it("should be 0A3B when guess 2435 for 1243 ", function () {
+        var back_string = compare("2435", "1243")
+        expect(back_string).toEqual("0A3B");
+    });
+
+    it("should be 3A0B when guess 1246 for 1243 ", function () {
+        var back_string = compare("1246", "1243")
+        expect(back_string).toEqual("3A0B");
     });
 });
