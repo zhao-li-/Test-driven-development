@@ -10,6 +10,7 @@ function random_a_number() {
     }
     return numbers[0] * 1000 + numbers[1] * 100 + numbers[2] * 10 + numbers[3];
 }
+
 function compare(guess_number, given_number) {
     var guess_numbers = [];
     var given_numbers = [];
