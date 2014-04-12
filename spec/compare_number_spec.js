@@ -25,7 +25,7 @@ describe("compare_number", function () {
         expect(back_string).toEqual("0A0B");
     });
 
-    it("should back 1A0B when guess 1236 for 1243 ", function () {
+    it("should back 2A1B when guess 1236 for 1243 ", function () {
         var back_string = compare("1236", "1243")
         expect(back_string).toEqual("2A1B");
     });
