@@ -41,19 +41,6 @@ describe("confirm_button", function () {
         expect(information).toEqual("第1次尝试：4A0B  恭喜成功!");
     })
 
-    it("should not increase again when guess more than seven times", function () {
-        confirm_data();
-        confirm_data();
-        confirm_data();
-        confirm_data();
-        confirm_data();
-        confirm_data();
-        confirm_data();
-        var count = localStorage.getItem("guess_count");
-
-        expect(count).toEqual("6");
-    })
-
     it("should clear the input content", function () {
         confirm_data();
         var content = document.getElementById("input_content").value;
