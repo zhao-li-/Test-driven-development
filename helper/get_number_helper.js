@@ -10,17 +10,17 @@ function should_not_repeated(string_number) {
 
 function should_one_random_number() {
     var numbers = [];
-    for(var i =0;i<1000;i++){
+    for (var i = 0; i < 1000; i++) {
         numbers.push(random_a_number())
     }
-    var grouped_numbers=_.groupBy(numbers,function(number){
+    var grouped_numbers = _.groupBy(numbers, function (number) {
         return parseInt(number)
     })
-    var counted_numbers=_.map(grouped_numbers,function(value,key){
-        return {"number":key,"count":value.length}
+    var counted_numbers = _.map(grouped_numbers, function (value, key) {
+        return {"number": key, "count": value.length}
     })
-    return !_.find(counted_numbers,function(counted_number){
-        return counted_number.count>10
+    return !_.find(counted_numbers, function (counted_number) {
+        return counted_number.count > 10
     })
 
 }

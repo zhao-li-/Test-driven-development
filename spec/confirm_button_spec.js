@@ -7,25 +7,25 @@ describe("confirm_button", function () {
     it("should make guess_count increase", function () {
         var before_count = parseInt(localStorage.getItem("guess_count"));
         confirm_data();
-        var after_count = parseInt(localStorage.getItem("guess_count")) - 1;
+        var after_count = parseInt(localStorage.getItem("guess_count"));
 
-        expect(before_count).toEqual(after_count);
+        expect(before_count).toEqual(after_count - 1);
     })
 
-    it("should be false when guess more than seven times",function(){
-        localStorage.setItem("guess_count",6);
+    it("should be false when guess more than seven times", function () {
+        localStorage.setItem("guess_count", 6);
 
         expect(make_illegal_no_alert()).toBeUndefined();
     })
 
-    it("should be false when guess_number length less than 4",function(){
-        document.getElementById("input_content").value.length =3;
+    it("should be false when guess_number length less than 4", function () {
+        document.getElementById("input_content").value.length = 3;
 
         expect(make_illegal_no_alert()).toBeUndefined();
     })
 
-    it("should be false when guess_number repeat",function(){
-        document.getElementById("input_content").value =1111;
+    it("should be false when guess_number repeat", function () {
+        document.getElementById("input_content").value = 1111;
 
         expect(make_illegal_no_alert()).toBeUndefined();
     })
