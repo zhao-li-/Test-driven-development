@@ -1,9 +1,12 @@
 function random_a_number() {
     var numbers = [];
-    for(var i=0;i<4;i++){
-        var number = parseInt(Math.random() * 10);
+    while(numbers.length<4){
+        var number = parseInt(Math.random() * 10).toString();
+        if(!_.contains(numbers,number)){
+            numbers.push(number)
+        }
     }
-    return numbers[0] * 1000 + numbers[1] * 100 + numbers[2] * 10 + numbers[3];
+    return numbers[0] + numbers[1]  + numbers[2] + numbers[3];
 }
 
 function compare(guess_number, given_number) {

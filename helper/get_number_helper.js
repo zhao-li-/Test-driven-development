@@ -1,5 +1,4 @@
-function should_not_repeated(number) {
-    var string_number = number.toString();
+function should_not_repeated(string_number) {
     var thousands = string_number.substring(0, 1);
     var hundreds = string_number.substring(1, 1);
     var tens = string_number.substring(2, 1);
@@ -8,19 +7,20 @@ function should_not_repeated(number) {
         return true;
     }
 }
+
 function should_one_random_num() {
-    var start_number_count = 0;
-    var end_number_count = 0;
-    for (var i = 0; i < 1000000; i++) {
-        var number = random_a_number();
-        if (number == 1234) {
-            start_number_count++;
-        }
-        if (number == 9876) {
-            end_number_count++;
-        }
+    var numbers = [];
+    for(var i =0;i<1000;i++){
+        numbers.push(random_a_number())
     }
-    if (start_number_count > 100 && start_number_count < 300 && end_number_count > 100 & end_number_count < 300) {
-        return true;
-    }
+    var grouped_numbers=_.groupBy(numbers,function(number){
+        return parseInt(number)
+    })
+    var counted_numbers=_.map(grouped_numbers,function(value,key){
+        return {"number":key,"count":value.length}
+    })
+    return !_.find(counted_numbers,function(counted_number){
+        return counted_number.count>10
+    })
+
 }
