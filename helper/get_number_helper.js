@@ -8,7 +8,7 @@ function should_not_repeated(string_number) {
     }
 }
 
-function should_one_random_num() {
+function should_one_random_number() {
     var numbers = [];
     for(var i =0;i<1000;i++){
         numbers.push(random_a_number())

@@ -7,7 +7,7 @@ describe("get_number", function () {
     });
 
     it("should be four digit numbers ", function () {
-        expect(number.toString().length).toEqual(4);
+        expect(number.length).toEqual(4);
     });
 
     it("should not repeated", function () {
@@ -16,7 +16,7 @@ describe("get_number", function () {
     });
 
     it("should be one random number ", function () {
-        var is_random_number = should_one_random_num();
+        var is_random_number = should_one_random_number();
         expect(is_random_number).toBeTruthy();
     });
 });

@@ -11,6 +11,25 @@ describe("confirm_button", function () {
 
         expect(before_count).toEqual(after_count);
     })
+
+    it("should be false when guess more than seven times",function(){
+        localStorage.setItem("guess_count",6);
+
+        expect(make_illegal_no_alert()).toBeUndefined();
+    })
+
+    it("should be false when guess_number length less than 4",function(){
+        document.getElementById("input_content").value.length =3;
+
+        expect(make_illegal_no_alert()).toBeUndefined();
+    })
+
+    it("should be false when guess_number repeat",function(){
+        document.getElementById("input_content").value =1111;
+
+        expect(make_illegal_no_alert()).toBeUndefined();
+    })
+
     it("should back 2A1B information when guess 1236 for 1243", function () {
         document.getElementById("input_content").value = 1236;
         localStorage.setItem("number", 1243);
