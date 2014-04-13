@@ -8,9 +8,9 @@ function init_data() {
 
 function judge_not_repeated(string_number) {
     var thousands = string_number.substring(0, 1);
-    var hundreds = string_number.substring(1, 1);
-    var tens = string_number.substring(2, 1);
-    var single = string_number.substring(3, 1);
+    var hundreds = string_number.substring(1, 2);
+    var tens = string_number.substring(2, 3);
+    var single = string_number.substring(3, 4);
     if (thousands != hundreds && thousands != tens && thousands != single && hundreds != tens && hundreds != single && tens != single) {
         return true;
     }
