@@ -1,4 +1,4 @@
-describe("contact",function(){
+describe("contact_get_and_compare",function(){
 
     beforeEach(function(){
         init_data();
