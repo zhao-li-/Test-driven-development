@@ -10,7 +10,7 @@ function should_not_repeated(string_number) {
 
 function should_one_random_number() {
     var numbers = [];
-    for (var i = 0; i < 1000; i++) {
+    for (var i = 0; i < 10000; i++) {
         numbers.push(random_a_number())
     }
     var grouped_numbers = _.groupBy(numbers, function (number) {
