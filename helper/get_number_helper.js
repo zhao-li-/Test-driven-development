@@ -20,7 +20,7 @@ function should_one_random_number() {
         return {"number": key, "count": value.length}
     })
     return !_.find(counted_numbers, function (counted_number) {
-        return counted_number.count > 10
+        return counted_number.count > 20
     })
 
 }

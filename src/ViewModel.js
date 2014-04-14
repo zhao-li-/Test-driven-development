@@ -1,6 +1,7 @@
 function init_data() {
     localStorage.setItem("number", random_a_number());
     localStorage.setItem("guess_count", 0)
+    document.getElementById("input_content").value = "";
     for (var i = 1; i < 7; i++) {
         document.getElementById("guess" + i).textContent = "";
     }
@@ -16,38 +17,35 @@ function judge_not_repeated(string_number) {
     }
 }
 
-function make_illegal_no_alert() {
-    var guess_count = parseInt(localStorage.getItem("guess_count")) + 1;
-    if (guess_count > 6) {
-        document.getElementById("input_content").value = "";
-        init_data();
-        return;
-    }
-    var string_number = document.getElementById("input_content").value;
-    if (string_number.length < 4) {
-        return;
-    }
-    if (!judge_not_repeated(string_number)) {
-        return;
-    }
-    return true;
-}
+//function make_illegal_no_alert() {
+//    var guess_count = parseInt(localStorage.getItem("guess_count")) + 1;
+//    if (guess_count > 6) {
+//        document.getElementById("input_content").value = "";
+//        init_data();
+//        return;
+//    }
+//    var string_number = document.getElementById("input_content").value;
+//    if (string_number.length < 4) {
+//        return;
+//    }
+//    if (!judge_not_repeated(string_number)) {
+//        return;
+//    }
+//    return true;
+//}
 
 function make_illegal() {
     var guess_count = parseInt(localStorage.getItem("guess_count")) + 1;
     if (guess_count > 6) {
-        alert("你已经尝试失败，请重新开始");
         document.getElementById("input_content").value = "";
         init_data();
         return;
     }
     var string_number = document.getElementById("input_content").value;
     if (string_number.length < 4) {
-        alert("请输入４位数字");
         return;
     }
     if (!judge_not_repeated(string_number)) {
-        alert("请保证数字不重复");
         return;
     }
     return true;

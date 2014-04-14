@@ -58,8 +58,8 @@
 <body>
 <input id="input_content" maxlength="4" onkeyup="value=value.replace(/[^\d]/g,'') "
        onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))">
-<button onclick='confirm_click()'>确定</button>
-<button onclick='init_data()'>重新开始</button>
+<button onclick='confirm_click()' id="confirm">确定</button>
+<button onclick='init_data()' id="restart">重新开始</button>
 <br/>
 <label id="guess1"></label>
 <br/>
